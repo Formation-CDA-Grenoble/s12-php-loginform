@@ -17,7 +17,8 @@
 
             if (password_verify($givenPassword, $hash)) {
                 echo 'Connexion réussie';
-                header('Location: index.php?user=' . $email);
+                setcookie('USERNAME', $email);
+                header('Location: index.php');
             } else {
                 echo 'Connexion échouée';
                 header('Location: login-form.php');
