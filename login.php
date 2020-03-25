@@ -17,11 +17,14 @@
 
             if (password_verify($givenPassword, $hash)) {
                 echo 'Connexion réussie';
+                header('Location: index.php');
             } else {
                 echo 'Connexion échouée';
+                header('Location: login-form.php');
             }
         } else {
             echo 'Nom d\'utilisateur inexistant';
+            header('Location: login-form.php');
         }
     }
 ?>
